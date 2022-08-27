@@ -13,7 +13,7 @@ pipeline {
                         archiveArtifacts artifacts: 'build/libs/labgradle-*-SNAPSHOT.jar', fingerprint: true
                     }
             }
-            stage('Test') {
+/*            stage('Test') {
                 agent {
                     docker { image 'gradle:7.5.1-jdk11' }
                 }
@@ -21,7 +21,7 @@ pipeline {
                         sh 'gradle test'
                         junit 'build/test-results/test/TEST-*.xml'
                     }
-            }
+            }*/
             stage('SonarQube') {
                 steps {
                     script{
@@ -44,7 +44,7 @@ pipeline {
                                     projectName: '${JOB_NAME}',
                                     flatten: true,
                                     selector: specific('${BUILD_NUMBER}'),
-                                    target: 'build';
+                                    target: 'build'
                     sh 'docker --version'
                     sh 'docker-compose --version'
                     sh 'docker-compose build'
