@@ -1,3 +1,2 @@
 @Library('shared-libraries') _
-
-pipeline()
+pipelines()
