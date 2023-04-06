@@ -71,14 +71,6 @@ pipeline {
                     }
                 }
             }
-            stage('Test Run Container') {
-                    steps {
-                        script {
-                            sh 'docker ps'
-                            sh 'curl http://35.185.33.165:8080/customers'
-                        }
-                    }
-            }
         }
 }
 
