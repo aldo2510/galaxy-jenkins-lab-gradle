@@ -1,5 +1,8 @@
 try {
     node {
+        tools {
+            gradle '7.5.1'
+        }
         stage('Preparation') {
             cleanWs()
             checkout scm
