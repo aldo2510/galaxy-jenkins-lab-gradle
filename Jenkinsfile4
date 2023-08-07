@@ -1,8 +1,6 @@
 try {
     node {
-        tools {
-            gradle '7.5.1'
-        }
+
         stage('Preparation') {
             cleanWs()
             checkout scm
@@ -20,6 +18,9 @@ try {
         }
 
         stage('Snyk SCA') {
+            tools {
+                gradle '7.5.1'
+            }
             catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                 sh './snyk test --sarif-file-output=results-open-source.sarif'
             }
