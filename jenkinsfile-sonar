@@ -17,7 +17,7 @@ pipeline {
                         def scannerHome = tool 'scanner-default'
                         withSonarQubeEnv('sonar-server') {
                             sh "${scannerHome}/bin/sonar-scanner \
-                            -D-Dsonar.organization=az400atruciosc \
+                            -Dsonar.organization=az400atruciosc \
                             -Dsonar.projectKey=labgradle01 \
                             -Dsonar.projectName=labgradle01 \
                             -Dsonar.sources=src/main/kotlin \
