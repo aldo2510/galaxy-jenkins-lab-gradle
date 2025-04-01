@@ -1,2 +1,2 @@
-@Library('shared-libraries') _
+@Library('my-shared-library') _
 pipelines()
